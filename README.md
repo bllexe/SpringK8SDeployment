@@ -2,12 +2,13 @@
 
 # Getting Started
 
-#application.yml variable you can use intellij IDEA environment Variables follow bellow in order
+### application.yml variable you can use intellij IDEA environment Variables follow bellow in order
 Edit Configurations->Environment Variables
-DB_HOST: localhost:3306
-DB_NAME: "your db name"
-username: "your username" 
-password: "your password"
+
+* DB_HOST: localhost:3306
+* DB_NAME: "your db name"
+* username: "your username" 
+* password: "your password"
 
 ### Reference Documentation
 
@@ -21,30 +22,30 @@ For further reference, please consider the following sections:
 
 
 # Frontend Angular  AngularK8sDeployment
-first need to run ng build for create dist path.
-## ng build 
+### first need to run ng build for create dist path.
+* ng build 
 # Create Docker file,paste code below
 FROM nginx:alpine
 COPY /dist/angular-k8s-deployment /usr/share/nginx/html
 
 # Create docker image, should be same path
 
-docker build -t angular_k8s_deployment:1.0 . 
+* docker build -t angular_k8s_deployment:1.0 . 
 
 # deployment yaml file checking does angular work
 
-kubectl apply -f ng-deployment.yaml
+* kubectl apply -f ng-deployment.yaml
 
-kubectl get pods
-kubectl get deployment
-kubectl get services
-kubectl get nodes -o wide   (get internal-ip)
+* kubectl get pods
+* kubectl get deployment
+* kubectl get services
+* kubectl get nodes -o wide   (get internal-ip)
 
-# checking browser does angular works
-http://192.168.49.2:31000/
+# checking browser does angular work
+* http://192.168.49.2:31000/
 
 # delete pods,deployment and service 
-kubectl delete pods --all
-kubectl delete deployment --all
-kubectl delete services --all
+* kubectl delete pods --all
+* kubectl delete deployment --all
+* kubectl delete services --all
 
